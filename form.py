@@ -3,7 +3,8 @@ from streamlit_option_menu import option_menu # pip install streamlit-option-men
 import pymysql.cursors # pip install pymysql
 import time
 import pandas as pd # pip install pandas
-from st_aggrid import GridOptionsBuilder, AgGrid, GridUpdateMode, DataReturnMode # pip install streamlit-aggrid   
+from st_aggrid import GridOptionsBuilder, AgGrid, GridUpdateMode, DataReturnMode # pip install streamlit-aggrid  
+
 # ---------------------------PAGE TITLE -----------------------------------
 st.set_page_config(page_title = "SUPER MARKET SALES",
                    page_icon = ":dart:",
@@ -32,20 +33,20 @@ width="1400" height="800">
 """, unsafe_allow_html=True)
 # -----------------------FORM ---------------------------------------------
 if selected == "Form":
-    
-    
     # connect to database
-    connection = pymysql.connect(host = "localhost",
-                                 user = "root",
-                                 password = "Dell@123",
-                                 db = "powerapps",
-                                 charset = "utf8mb4",
-                                 cursorclass = pymysql.cursors.DictCursor)
+    
     
     # Create the sales form
     left_column, middle_column, right_column = st.columns(3)
     with middle_column:
         st.subheader("📃Sales Form")
+    connection = pymysql.connect(host = "localhost",
+                                 port = 3306,
+                                 user = "root",
+                                 password = "Dell@123",
+                                 db = "powerapps",
+                                 charset = "utf8mb4",
+                                 cursorclass = pymysql.cursors.DictCursor)    
     left_column, right_column = st.columns(2)
     
     with left_column:    
@@ -78,6 +79,7 @@ if selected == "Report":
     st.subheader(f"📋 {selected}") 
     
     connection = pymysql.connect(host = "localhost",
+                                 port = 3306,
                                  user = "root",
                                  password = "Dell@123",
                                  db = "powerapps",
