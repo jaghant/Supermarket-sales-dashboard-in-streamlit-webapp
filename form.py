@@ -40,7 +40,7 @@ if selected == "Form":
     left_column, middle_column, right_column = st.columns(3)
     with middle_column:
         st.subheader("📃Sales Form")
-    connection = pymysql.connect(host = "localhost",
+    connection = pymysql.connect(host = "127.0.0.1",
                                  port = 3306,
                                  user = "root",
                                  password = "Dell@123",
@@ -61,7 +61,7 @@ if selected == "Form":
         Quantity      = st.number_input("Quantity :")
         unit_price    = st.number_input("Unit Price :")
         total         = st.number_input("Total :")
-    rating        = st.number_input("Rating :", 0,5)
+        rating        = st.number_input("Rating :", 0,5)
     
 # Insert the values into the sales_details database
     if st.button("Submit"):
@@ -78,7 +78,7 @@ if selected == "Form":
 if selected == "Report":
     st.subheader(f"📋 {selected}") 
     
-    connection = pymysql.connect(host = "localhost",
+    connection = pymysql.connect(host = "127.0.0.1",
                                  port = 3306,
                                  user = "root",
                                  password = "Dell@123",
