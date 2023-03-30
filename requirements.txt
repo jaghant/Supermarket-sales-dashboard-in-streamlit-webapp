@@ -3,3 +3,5 @@ streamlit<1.17.1
 streamlit-option-menu==0.3.2
 PyMySQL == 1.0.2
 streamlit-aggrid == 0.3.3
+plotly
+mysql-connector-python
